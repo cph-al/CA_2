@@ -1,25 +1,21 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Hobby implements Serializable
+public class CityInfo implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
-    private String hName;
-    private String hDesc;
+    private int zip;
+    private String city;
     
-    List<Person> persons = new ArrayList();
-
     public int getId()
     {
         return id;
@@ -30,23 +26,23 @@ public class Hobby implements Serializable
         this.id = id;
     }
 
-    public String getHobbyName()
+    public int getZip()
     {
-        return hName;
+        return zip;
     }
 
-    public void setHobbyName(String hName)
+    public void setZip(int zip)
     {
-        this.hName = hName;
+        this.zip = zip;
     }
 
-    public String getHobbyDesc()
+    public String getCity()
     {
-        return hDesc;
+        return city;
     }
 
-    public void setHobbyDesc(String hDesc)
+    public void setCity(String city)
     {
-        this.hDesc = hDesc;
-    }  
+        this.city = city;
+    }
 }
