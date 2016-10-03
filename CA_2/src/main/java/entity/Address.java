@@ -15,6 +15,7 @@ public class Address implements Serializable
     
     private String street;
     private String addressInfo;
+    private CityInfo ci;
 
     public int getId()
     {
