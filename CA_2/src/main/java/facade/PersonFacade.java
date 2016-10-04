@@ -103,23 +103,15 @@ public class PersonFacade implements PersonFacadeI
     }
 
     @Override
-    public boolean editPerson(Person p, int id)
+    public boolean editPerson(Person p)
     {
         EntityManager em = emf.createEntityManager();
         try
         {
             em.getTransaction().begin();
-            Person person = em.find(Person.class, id);
-            if (person != null)
-            {
-                person = p;
-                em.merge(person);
-                em.getTransaction().commit();
-                return true;
-            } else
-            {
-                return false;
-            }
+            em.merge(p);
+            em.getTransaction().commit();
+            return true;
         } finally
         {
             em.close();

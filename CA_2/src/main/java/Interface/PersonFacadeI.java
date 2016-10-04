@@ -16,5 +16,5 @@ public interface PersonFacadeI
 
     boolean deletePerson(int id);
     
-    boolean editPerson(Person p, int id);
+    boolean editPerson(Person p);
 }
