@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class CityInfo implements Serializable
@@ -18,6 +19,7 @@ public class CityInfo implements Serializable
     private int zip;
     private String city;
     
+    @OneToMany    
     List<Address> addresses = new ArrayList();
     
     public int getId()

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Phone implements Serializable
@@ -15,7 +16,10 @@ public class Phone implements Serializable
     
     private int pNumber;
     private String pDesc;
-
+    
+    @ManyToOne
+    private InfoEntity ie;
+    
     public int getId()
     {
         return id;

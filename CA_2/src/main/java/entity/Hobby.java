@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Hobby implements Serializable
@@ -18,6 +19,7 @@ public class Hobby implements Serializable
     private String hName;
     private String hDesc;
     
+    @ManyToMany
     List<Person> persons = new ArrayList();
 
     public int getId()

@@ -1,23 +1,17 @@
 package entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
-public class Person implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    
+public class Person extends InfoEntity
+{
     private String firstName;
     private String lastName;
-    
+
+    @ManyToMany
     List<Hobby> hobbies = new ArrayList();
 
     public String getFirstName()
@@ -39,12 +33,4 @@ public class Person implements Serializable {
     {
         this.lastName = lastName;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }  
 }
