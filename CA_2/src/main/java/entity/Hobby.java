@@ -19,8 +19,8 @@ public class Hobby implements Serializable
     private String hName;
     private String hDesc;
     
-    @ManyToMany
-    List<Person> persons = new ArrayList();
+    @ManyToMany(mappedBy = "hobby")
+    List<Person> person = new ArrayList();
 
     public int getId()
     {

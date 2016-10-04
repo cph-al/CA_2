@@ -12,7 +12,7 @@ public class Person extends InfoEntity
     private String lastName;
 
     @ManyToMany
-    List<Hobby> hobbies = new ArrayList();
+    List<Hobby> hobby = new ArrayList();
 
     public String getFirstName()
     {
