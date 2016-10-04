@@ -11,8 +11,10 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "PERSON")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class InfoEntity implements Serializable
 {
@@ -25,7 +27,7 @@ public class InfoEntity implements Serializable
     @OneToMany
     List<Phone> phone = new ArrayList();
     @ManyToOne
-    private Address a;
+    private Address address;
 
     public int getId()
     {
