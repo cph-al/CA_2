@@ -18,7 +18,7 @@ public class Phone implements Serializable
     private int pNumber;
     private String pDesc;
     
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private InfoEntity ie;
     
     public int getId()

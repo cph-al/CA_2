@@ -25,10 +25,10 @@ public class InfoEntity implements Serializable
     
     private String email;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     List<Phone> phone = new ArrayList();
     
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Address address;
 
     public Address getAddress()

@@ -15,7 +15,7 @@ public class PersonFacade implements PersonFacadeI
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA_2_PU");
 
     @Override
-    public boolean addPerson(Person p)
+    public Person addPerson(Person p)
     {
         EntityManager em = emf.createEntityManager();
         try
@@ -23,7 +23,7 @@ public class PersonFacade implements PersonFacadeI
             em.getTransaction().begin();
             em.persist(p);
             em.getTransaction().commit();
-            return true;
+            return p;
         } finally
         {
             em.close();

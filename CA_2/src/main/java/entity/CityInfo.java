@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -19,10 +18,9 @@ public class CityInfo implements Serializable
     private int id;
     
     private int zip;
-    private String city;
+    private String city;  
     
-    
-    @ManyToOne(cascade = CascadeType.PERSIST)   
+    @OneToMany(cascade = CascadeType.PERSIST)   
     List<Address> addresses = new ArrayList();
     
     public int getId()

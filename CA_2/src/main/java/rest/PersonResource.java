@@ -11,6 +11,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
@@ -21,6 +22,7 @@ import javax.ws.rs.core.Response;
 public class PersonResource
 {
 
+    static Gson gson = new Gson();
     @Context
     private UriInfo context;
 
@@ -52,12 +54,19 @@ public class PersonResource
         String response = gson.toJson(jo);
         return response;   
     }
-    
- 
-    /**
-     * PUT method for updating or creating an instance of PersonResource
-     * @param content representation for the resource
-     */
+
+    @POST
+    @Path("add")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String addPerson(String content)
+    {
+        PersonFacade pf = new PersonFacade();
+        Person p = gson.fromJson(content, Person.class);
+        Person person = pf.addPerson(p);
+        return gson.toJson(person);
+    }
+
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content)

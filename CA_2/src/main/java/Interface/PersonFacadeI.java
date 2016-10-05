@@ -6,7 +6,7 @@ import java.util.List;
 public interface PersonFacadeI
 {
 
-    boolean addPerson(Person p);
+    Person addPerson(Person p);
 
     Person getPerson(int id);
 
