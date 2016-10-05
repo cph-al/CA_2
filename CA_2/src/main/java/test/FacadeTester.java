@@ -2,6 +2,7 @@ package test;
 
 import entity.Person;
 import facade.PersonFacade;
+import java.util.Arrays;
 
 
 public class FacadeTester
@@ -23,5 +24,6 @@ public class FacadeTester
         p2.setFirstName("Bro");
         p2.setLastName("Cho");
         pf.editPerson(p2);
+        System.out.println("FN: "+pf.getPerson(1).getFirstName());
     }
 }

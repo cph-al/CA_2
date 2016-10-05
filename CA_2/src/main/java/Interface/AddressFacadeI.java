@@ -1,8 +1,9 @@
 package Interface;
 
 import entity.Address;
+import entity.Person;
 
 public interface AddressFacadeI
 {
-    Address getAddress(int id);
+    Address getAddress(Person p);
 }
