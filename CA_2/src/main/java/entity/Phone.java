@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +12,13 @@ import javax.persistence.ManyToOne;
 public class Phone implements Serializable
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     private int pNumber;
     private String pDesc;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private InfoEntity ie;
     
     public int getId()
