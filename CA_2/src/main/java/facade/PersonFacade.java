@@ -46,32 +46,11 @@ public class PersonFacade implements PersonFacadeI
         }
     }
 
-//    @Override
-//    public List<Person> getPersons()
-//    {
-//        EntityManager em = emf.createEntityManager();
-//        try
-//        {
-//            List<Person> pl = new ArrayList();
-//            int i = 1;
-//            while (true)
-//            {
-//                Person p = em.find(Person.class, i);
-//                if (p != null)
-//                {
-//                    pl.add(p);
-//                    i++;
-//                } else
-//                {
-//                    break;
-//                }
-//            }
-//            return pl;
-//        } finally
-//        {
-//            em.close();
-//        }
-//    }
+    public Person getPersonInfo(int id)
+    {
+       Person p = new Person();
+        return p; 
+    }
     
     @Override
     public List<Person> getPersons()

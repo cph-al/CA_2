@@ -11,16 +11,30 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Phone implements Serializable
 {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private int pNumber;
     private String pDesc;
-    
+
     @ManyToOne
     private InfoEntity ie;
+
+    public Phone(){}
     
+    public InfoEntity getInfoEntity()
+    {
+        return ie;
+    }
+
+    public void setInfoEntity(InfoEntity ie)
+    {
+        this.ie = ie;
+    }
+
+
     public int getId()
     {
         return id;
