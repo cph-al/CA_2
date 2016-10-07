@@ -26,7 +26,7 @@ public class InfoEntity implements Serializable
     private String email;
     
     @OneToMany(cascade = CascadeType.PERSIST)
-    List<Phone> phone = new ArrayList();
+    public List<Phone> phone = new ArrayList();
     
     @ManyToOne
     private Address address;

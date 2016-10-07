@@ -20,6 +20,33 @@ public class Phone implements Serializable
     
     @ManyToOne
     private InfoEntity ie;
+
+    public Phone() {
+    }
+
+    public int getpNumber() {
+        return pNumber;
+    }
+
+    public void setpNumber(int pNumber) {
+        this.pNumber = pNumber;
+    }
+
+    public String getpDesc() {
+        return pDesc;
+    }
+
+    public void setpDesc(String pDesc) {
+        this.pDesc = pDesc;
+    }
+
+    public InfoEntity getIe() {
+        return ie;
+    }
+
+    public void setIe(InfoEntity ie) {
+        this.ie = ie;
+    }
     
     public int getId()
     {
@@ -31,23 +58,5 @@ public class Phone implements Serializable
         this.id = id;
     }
 
-    public int getPhoneNumber()
-    {
-        return pNumber;
-    }
 
-    public void setPhoneNumber(int pNumber)
-    {
-        this.pNumber = pNumber;
-    }
-
-    public String getPhoneDesc()
-    {
-        return pDesc;
-    }
-
-    public void setPhoneDesc(String pDesc)
-    {
-        this.pDesc = pDesc;
-    }
 }

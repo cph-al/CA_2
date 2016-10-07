@@ -1,6 +1,8 @@
 package test;
 
+import entity.Hobby;
 import entity.Person;
+import entity.Phone;
 import facade.PersonFacade;
 import java.util.Arrays;
 
@@ -11,10 +13,17 @@ public class FacadeTester
     {
         PersonFacade pf = new PersonFacade();
         Person p = new Person();
+        Phone phone = new Phone();
+        Hobby hobby = new Hobby();
+        phone.setpNumber(22334455);
+        phone.setpDesc("tissemand");
         p.setFirstName("Laura");
         p.setLastName("Hartig");
         p.setEmail("laur2012@hotmail.com");
-        pf.addPerson(p);
+        //pf.addPerson(p);
+        pf.addPhone(phone, p);
+        
+        
         Person p1 = new Person();
         p1.setFirstName("Hai");
         p1.setLastName("Fag");
@@ -25,5 +34,7 @@ public class FacadeTester
         p2.setLastName("Cho");
         pf.editPerson(p2);
         System.out.println("FN: "+pf.getPerson(1).getFirstName());
+        
+        
     }
 }
