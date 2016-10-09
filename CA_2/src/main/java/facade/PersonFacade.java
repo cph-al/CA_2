@@ -133,7 +133,7 @@ public class PersonFacade implements PersonFacadeI
         {
             em.getTransaction().begin();
             p.phone.add(phone);
-            phone.setInfoEntity(p);
+            phone.setIe(p);
             em.merge(p);
             em.merge(phone);
             em.getTransaction().commit();

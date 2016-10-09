@@ -22,8 +22,7 @@ public class Phone implements Serializable
     @ManyToOne
     private InfoEntity ie;
 
-
-    public Phone(){
+    public Phone() {
     }
 
     public int getpNumber() {
@@ -42,11 +41,11 @@ public class Phone implements Serializable
         this.pDesc = pDesc;
     }
 
-    public InfoEntity getInfoEntity() {
+    public InfoEntity getIe() {
         return ie;
     }
 
-    public void setInfoEntity(InfoEntity ie) {
+    public void setIe(InfoEntity ie) {
         this.ie = ie;
     }
 
