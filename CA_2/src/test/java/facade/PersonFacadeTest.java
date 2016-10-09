@@ -27,6 +27,11 @@ public class PersonFacadeTest
         Person p1 = new Person("Måske", "Ikke");
         pf.addPerson(p1);
     }
+    
+    @AfterClass
+    public static void tearDownClass()
+    {
+    }
 
     @Test
     public void testAddPerson()
@@ -72,18 +77,6 @@ public class PersonFacadeTest
         PersonFacade instance = new PersonFacade();
         Person expResult = null;
         Person result = instance.getPersonInfo(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testGetPersons_0args()
-    {
-        System.out.println("getPersons");
-        PersonFacade instance = new PersonFacade();
-        List<Person> expResult = null;
-        List<Person> result = instance.getPersons();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

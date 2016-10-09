@@ -55,15 +55,6 @@ public class PersonResource
         }
     }
 
-    @GET
-    @Path("contactinfo/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getContactInfo(@PathParam("id") int id)
-    {
-        Person p = pf.getPersonInfo(id);
-        return gson.toJson(p);
-    }
-
     @POST
     @Path("add")
     @Produces(MediaType.APPLICATION_JSON)

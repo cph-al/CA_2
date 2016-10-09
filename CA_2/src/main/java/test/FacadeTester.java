@@ -15,7 +15,7 @@ public class FacadeTester
         Phone phone = new Phone();
         Hobby hobby = new Hobby();
         phone.setpNumber(22334455);
-        phone.setpDesc("tissemand");
+        phone.setpDesc("pro");
         p.setFirstName("Laura");
         p.setLastName("Hartig");
         p.setEmail("laur2012@hotmail.com");
@@ -24,7 +24,7 @@ public class FacadeTester
         
         
         Person p1 = new Person();
-        p1.setFirstName("Hai");
+        p1.setFirstName("Hai");        
         p1.setLastName("Fag");
         pf.addPerson(p1);
         Person p2 = new Person();

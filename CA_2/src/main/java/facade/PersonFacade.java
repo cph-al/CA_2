@@ -47,12 +47,6 @@ public class PersonFacade implements PersonFacadeI
             em.close();
         }
     }
-
-    public Person getPersonInfo(int id)
-    {
-       Person p = new Person();
-        return p; 
-    }
     
     @Override
     public List<Person> getPersons()

@@ -5,17 +5,6 @@ $(document).ready(function ()
     deleteP();
 });
 
-//function all()
-//{
-//    $("#newQ").click(function ()
-//    {
-//        $.getJSON("api/person/all", function (result)
-//        {
-//            $("#quote").text(result.quote);
-//        });
-//    });
-//}
-
 function addP()
 {
     $("#addP").click(function ()
@@ -31,7 +20,7 @@ function addP()
             data: JSON.stringify({
                 firstName: fn,
                 lastName: ln,
-                email: email, }),
+                email: email}),
             success: function ()
             {
                 console.log("Added new person:" + fn + " " + ln + " " + email);
@@ -44,17 +33,24 @@ function editP()
 {
     $("#editP").click(function ()
     {
-        var person = '{"firstName":"' + $("#editFN").val() + '","lastName": "' + $("#editLN").val() + '"}';
-        var id = $("#id").val();
-        console.log("Edited person with " + id + " (" + person + ")");
+        var id = $("#editID").val();
+        var fn = $("editFN").val();
+        var ln = $("#editLN").val();
+        var email = $("#editEmail").val();
 
         $.ajax({
-            url: "api/person/" + id,
+            url: "http://localhost:8080/CA_2/api/person/edit/"+id,
             type: "PUT",
-            data: person,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function () {}
+            contentType: "application/json",
+            data: JSON.stringify({
+                id: id,
+                firstName: fn,
+                lastName: ln,
+                email: email, }),
+            success: function ()
+            {
+                console.log("Added new person:" + fn + " " + ln + " " + email);
+            }
         });
     });
 }
@@ -63,16 +59,18 @@ function deleteP()
 {
     $("#deleteP").click(function ()
     {
-        var id = $("#id1").val();
-        console.log("Quote " + id + " was deleted");
+        var id = $("#deleteID").val();
 
         $.ajax({
-            url: "api/quote/" + id,
-            type: "DELETE",
-            data: id,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function () {}
+            url: "http://localhost:8080/CA_2/api/person/delete/"+id,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+                id: id}),
+            success: function () 
+            {
+                console.log("Person "+id+" was deleted");
+            }
         });
     });
 }

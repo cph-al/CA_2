@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>CA 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="font-family: calibri">
+        <h2>Documentation</h2>
+        <h3>Github</h3>
+        <a href="https://github.com/cph-al/CA_2.git">Github link</a><br>
+        <h3>Test strategy</h3>
+        Vi har lavede 3 JUnit tests på vores PersonFacade, som alle fungere.
+        Vi mangler dog at teste at par metoder, eftersom vi ikke blev færdige med hele PersonFacade.<br>
+        Til at teste vores REST API manuelt, brugte vi Postman eller en normal browser.<br>
+        <h3>Who did what</h3>
+        Vi har begge været inde over de fleste dele af projektet, hvilket vi også var nødt til, da vi kun var to.<br>
+        Vi føler, at vi begge har ret til fuld studypoints på trods af at projektet ikke er 100% færdigt.<br>
+        Vi har dog kæmpet for at få løst mindst én del af alle opgaverne i projektet.
+        <h3>Testing the system</h3>
+        <div style="font-weight: bold">Via Postman</div>
+        Kør vores program og prøv en af følgende af i Postman<br><br>
+        <label style="font-weight: bold">GET alle Persons i DB: </label>Vælg GET og brug localhost:8080/CA_2/api/person/all<br>
+        <label style="font-weight: bold">GET Person på ID (1): </label>Vælg GET og brug localhost:8080/CA_2/api/person/1<br>
+        <label style="font-weight: bold">Add Person: </label>Vælg POST og brug localhost:8080/CA_2/api/person/add, derefter find body-tabben og indsæt {"firstName": "xxx","lastName": "xxx"} - skift xxx ud med vilkårlig tekst)<br>
+        <br>
+        <div style="font-weight: bold">Via website</div>        
+        Det er desværre kun "Create" der virker her, da vi ikke nåede "Edit" og "Delete".<br>
+        Indtast noget i felterne, klik på "Create person"-knappen og personen bliver tilføjet til databasen.<br>
+        <a href="person.html">HTML using our REST API</a><br> 
+        <h3>Bonus studypoints</h3>
+        Vi har diskuteret en del API og tests med en gruppe fra B-klassen bestående af Michael Daugbjerg, Tim Hemmingsen og Oliver Villumsen, som har hjulpet os meget. Vi mener derfor, at de har fortjent ekstra studypoints. 
+        <br><br>
+        <a href="start.html">Go back</a>
+    </body>
+</html>
