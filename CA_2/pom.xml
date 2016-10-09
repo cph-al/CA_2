@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>js</groupId>
-    <artifactId>CA_2</artifactId>
+    <artifactId>CA_2</artifactId> 
     <version>1.0</version>
     <packaging>war</packaging>
 
