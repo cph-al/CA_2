@@ -1,6 +1,8 @@
 package Interface;
 
+import entity.Hobby;
 import entity.Person;
+import entity.Phone;
 import java.util.List;
 
 public interface PersonFacadeI
@@ -17,4 +19,8 @@ public interface PersonFacadeI
     boolean deletePerson(int id);
     
     boolean editPerson(Person p);
+    
+    boolean addHobby(Hobby hobby, Person p);
+    
+    boolean addPhone(Phone phone, Person p);
 }

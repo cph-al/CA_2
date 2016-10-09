@@ -20,7 +20,7 @@ public class Person extends InfoEntity
     private String lastName;
 
     @ManyToMany
-    List<Hobby> hobby = new ArrayList();
+    public List<Hobby> hobby = new ArrayList();
 
     public Person()
     {

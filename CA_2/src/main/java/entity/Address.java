@@ -21,10 +21,10 @@ public class Address implements Serializable
     private String street;
     private String addressInfo;
     
-    @OneToMany(cascade = CascadeType.PERSIST)
-    List<InfoEntity> ie = new ArrayList();
     @ManyToOne
     private CityInfo ci;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    List<InfoEntity> ie = new ArrayList();
 
     public int getId()
     {

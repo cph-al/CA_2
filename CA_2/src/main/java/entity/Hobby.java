@@ -20,7 +20,7 @@ public class Hobby implements Serializable
     private String hDesc;
     
     @ManyToMany(mappedBy = "hobby")
-    List<Person> person = new ArrayList();
+    public List<Person> person = new ArrayList();
 
     public int getId()
     {

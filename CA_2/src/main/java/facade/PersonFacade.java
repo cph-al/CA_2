@@ -1,7 +1,9 @@
 package facade;
 
 import Interface.PersonFacadeI;
+import entity.Hobby;
 import entity.Person;
+import entity.Phone;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -105,4 +107,41 @@ public class PersonFacade implements PersonFacadeI
             em.close();
         }
     }
+
+    @Override
+    public boolean addHobby(Hobby hobby, Person p) {
+        EntityManager em = emf.createEntityManager();
+        try
+        {
+            em.getTransaction().begin();
+            p.hobby.add(hobby);
+            hobby.person.add(p);
+            em.merge(p);
+            em.merge(hobby);
+            em.getTransaction().commit();
+            return true;
+        } finally
+        {
+            em.close();
+        }
+    }
+
+    @Override
+    public boolean addPhone(Phone phone, Person p) {
+        EntityManager em = emf.createEntityManager();
+        try
+        {
+            em.getTransaction().begin();
+            p.phone.add(phone);
+            phone.setInfoEntity(p);
+            em.merge(p);
+            em.merge(phone);
+            em.getTransaction().commit();
+            return true;
+        } finally
+        {
+            em.close();
+        }
+    }
+    
 }
